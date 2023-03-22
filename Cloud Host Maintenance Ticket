@@ -1,0 +1,186 @@
+
+
+**CLOUD HOST MAINTENANCE TICKET -RUNBOOK**
+This runbook will help you handle issues related to the host maintenance common incidents such as: 
+
+1) DISK REPLACEMENT ISSUES
+2) BBU ISSUES
+3) BOND issue
+4) migration failed due to xen tools old version 
+4) where to use Live-Migration
+
+
+
+**CLOUD HOST MAINTENANCE TICKET -RUNBOOK**
+This runbook will help you handle issues related to the host maintenance common incidents such as: 
+
+1) DISK REPLACEMENT ISSUES
+2) BBU ISSUES
+3) BOND issue
+4) migration failed due to xen tools old version 
+5) when to use Live-Migration
+
+1) DISK REPLACEMENT ISSUE 
+
+For disk replacement issues: 
+
+a)  Connect to the host using ssh connection using the root user
+b) check the disk/volume with the command: 
+
+/opt/MegaRAID/storcli/storcli64 /c0 show all
+
+c) copy and paiste the output of this command into the ims ticket 
+d) If the output of this command contains something like this: 
+```
+Drive Groups = 1  
+  
+
+TOPOLOGY :
+
+ 
+========  
+  
+--------------------------------------------------------------------------  
+
+DG Arr Row EID:Slot DID Type State BT Size PDC PI SED DS3 FSpace
+
+  
+0 - - - - RAID10 Dgrd N 3.092 TB dflt N N dflt N  
+0 0 - - - RAID1 Dgrd N 1.546 TB dflt N N dflt N  
+0 0 0 252:0 8 DRIVE Failed N 1.546 TB dflt N N dflt -  
+0 0 1 252:1 9 DRIVE Onln N 1.546 TB dflt N N dflt -  
+0 1 - - - RAID1 Dgrd N 1.546 TB dflt N N dflt N  
+0 1 0 252:2 10 DRIVE Onln N 1.546 TB dflt N N dflt -  
+
+0 1 1 252:3 11 DRIVE Onln N 1.546 TB dflt N N dflt
+
+  
+  
+DG=Disk Group Index|Arr=Array Index|Row=Row Index|EID=Enclosure Device ID  
+DID=Device ID|Type=Drive Type|Onln=Online|Rbld=Rebuild|Dgrd=Degraded  
+Pdgd=Partially degraded|Offln=Offline|BT=Background Task Active  
+PDC=PD Cache|PI=Protection Info|SED=Self Encrypting Drive|Frgn=Foreign  
+DS3=Dimmer Switch 3|dflt=Default|Msng=Missing|FSpace=Free Space Present  
+  
+Virtual Drives = 2  
+  
+
+VD LIST :
+
+  
+--------------------------------------------------------------  
+
+DG/VD TYPE State Access Consist Cache sCC Size Name
+
+  
+0/0 RAID10 Dgrd RW Yes NRWBD - 60.0 GB RAID10-A  
+
+0/1 RAID10 Dgrd RW Yes NRWBD - 3.033 TB RAID10-B
+
+ 
+--------------------------------------------------------------  
+  
+Cac=CacheCade|Rec=Recovery|OfLn=OffLine|Pdgd=Partially Degraded|dgrd=Degraded  
+Optl=Optimal|RO=Read Only|RW=Read Write|B=Blocked|Consist=Consistent|  
+R=Read Ahead Always|NR=No Read Ahead|WB=WriteBack|  
+AWB=Always WriteBack|WT=WriteThrough|C=Cached IO|D=Direct IO|sCC=Scheduled  
+Check Consistency  
+  
+Physical Drives = 4  
+  
+
+PD LIST :
+
+  
+  
+---------------------------------------------------------------------------------------  
+
+EID:Slt DID State DG Size Intf Med SED PI SeSz Model Sp
+
+  
+252:0 8 Failed 0 1.546 TB SATA SSD N N 512B % } % U  
+252:1 9 Onln 0 1.546 TB SATA SSD N N 512B SDLF1CRM-017T-1HST U  
+252:2 10 Onln 0 1.546 TB SATA SSD N N 512B SDLF1CRM-017T-1HST 252:3 11 Onln 0 1.546 TB SATA SSD N N 512B SDLF1CRM-017T-1HST   
+
+---------------------------------------------------------------------------------------  
+  
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup  
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare  
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface  
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info  
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down|T-Transition|F-Foreign  
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded  
+CFShld-Configured shielded
+```
+
+where: 
+
+```
+0/0 RAID10 Dgrd RW Yes NRWBD - 60.0 GB RAID10-A  
+
+0/1 RAID10 Dgrd RW Yes NRWBD - 3.033 TB RAID10-B
+```
+indicate that the raid is degraded and the failed disk (in this case) is: 
+
+hdd0 is the failed disk (252:0 where 0 is the bus number where the disk is attached and therefore is the hdd0) 
+
+```
+252:0 8 Failed 0 1.546 TB SATA SSD N N 512B % } % U
+```
+
+it means that this issue needs to be escalate the ticket to the hardware team 
+
+f) prior escalate this issue to the hardware team disable resource allocation from IMS 
+[picture]
+
+g) then send  the following message to the hardware team:
+
+```
+Hi DC team,  
+please could you replace the failed drive hdd0 by HOT swap only?  
+Please bear in mind that there are customer instances running inside the host now.  
+Please send back this ticket to me once the operation has been done.
+```
+Replace hdd0 with hdd1 or hdd2 or hdd3 in this message based on the output of the error that you will received.
+
+f) If in this error message at the end there is something like this: 
+
+```
+Cachevault_Info :
+===============
+
+-----------------------------------
+Model State Temp Mode MfgDate
+-----------------------------------
+CVPM02 Failed 22C - 2018/05/19
+-----------------------------------
+```
+please go to the 2) BBU ISSUES on this runbook once you have replaced the disk
+
+g) once the Hardware team replaced the disk , 
+Connect to the host using ssh connection using the root user
+
+run the following command: 
+
+/opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show rebuild
+
+if the output message is successfull: 
+
+```
+Controller = 0  
+Status = Success  
+Description = Show Drive Rebuild Status Succeeded.  
+  
+  
+----------------------------------------------------------  
+Drive-ID Progress% Status Estimated Time Left  
+----------------------------------------------------------  
+/c0/e252/s0 - Not in progress -  
+/c0/e252/s1 - Not in progress -  
+/c0/e252/s2 - Not in progress -  
+/c0/e252/s3 - Not in progress -  
+----------------------------------------------------------
+```
+
+f) if the rebuild status is succeeded , reinable the resource allocation and close the ticket 
+
