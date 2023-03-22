@@ -171,3 +171,51 @@ Drive-ID Progress% Status Estimated Time Left
 
 f) if the rebuild status is succeeded , reinable the resource allocation and close the ticket 
 
+
+2) BBU ISSUES
+
+a)  Connect to the host using ssh connection using the root user
+b) check the disk/volume with the command: 
+
+/opt/MegaRAID/storcli/storcli64 /c0 show all
+
+c) copy and paiste the output of this command into the ims ticket 
+d) If the end  output of this command contains something like this: 
+
+```
+
+Cachevault_Info :
+===============
+
+-----------------------------------
+Model State Temp Mode MfgDate
+-----------------------------------
+CVPM02 Failed 22C - 2018/05/19
+-----------------------------------
+```
+
+with the CVPM02 failed therefore there is the need to substitute the bbu
+
+Procedure: 
+
+a) schedule an host evacuation
+b) once the host has bee evacuated send the host to the hardware team 
+c) once the bbu has been fixed and the tickat has been reassinged to you , 
+ Connect to the host using ssh connection using the root user
+check the disk/volume with the command: 
+
+/opt/MegaRAID/storcli/storcli64 /c0 show all
+
+if the end of output is something like this 
+
+```
+Cachevault_Info :
+===============
+
+-----------------------------------
+Model State Temp Mode MfgDate
+-----------------------------------
+CVPM02 ... 22C - 2018/05/19
+-----------------------------------
+```
+
