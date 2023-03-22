@@ -1,16 +1,3 @@
-
-
-**CLOUD HOST MAINTENANCE TICKET -RUNBOOK**
-This runbook will help you handle issues related to the host maintenance common incidents such as: 
-
-1) DISK REPLACEMENT ISSUES
-2) BBU ISSUES
-3) BOND issue
-4) migration failed due to xen tools old version 
-4) where to use Live-Migration
-
-
-
 **CLOUD HOST MAINTENANCE TICKET -RUNBOOK**
 This runbook will help you handle issues related to the host maintenance common incidents such as: 
 
