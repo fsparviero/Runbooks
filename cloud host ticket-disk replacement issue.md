@@ -116,7 +116,9 @@ from the ticket related to the case select view:
 
 then edit: 
 
-![image](https://user-images.githubusercontent.com/67952884/229355309-f5d4bd4a-07e4-4f5f-846f-0fcd9acdfdfa.png)
+![image]
+
+![image](https://user-images.githubusercontent.com/67952884/229355401-21f0c27a-804c-4b7d-ab0d-62cbe387807d.png)
 
 
 then select hardware and then select the tab properties related to the faulty drive. In this case hdd3. You will be able to see the serial number of the drive and compare it with the one found it previously in this step.
