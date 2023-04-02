@@ -110,7 +110,7 @@ By checking the serial numbers agains the IMS data of the drives, you will be ab
 In order to do this ,please go to the ims portal, 
 from the ticket related to the case select view: 
 
-![image]
+
 
 <img width="505" alt="image" src="https://user-images.githubusercontent.com/67952884/229355623-75f99255-40a1-4420-85c1-a2dcedbcb44d.png">
 
@@ -120,20 +120,21 @@ from the ticket related to the case select view:
 then edit: 
 
 
+<img width="693" alt="image" src="https://user-images.githubusercontent.com/67952884/229355661-ea316ee2-872c-4f9e-9c75-b6b9b6cf3873.png">
 
 
 then select hardware and then select the tab properties related to the faulty drive. In this case hdd3. You will be able to see the serial number of the drive and compare it with the one found it previously in this step.
 
-![image](https://user-images.githubusercontent.com/67952884/229355317-5a8a4045-b97a-4e75-b8ec-5e472f2c586c.png)
+<img width="779" alt="image" src="https://user-images.githubusercontent.com/67952884/229355713-a8564c44-cba3-44bf-8b5b-5a6844f4cb54.png">
+
 
 Hdd3 proporties 
 
-![image](https://user-images.githubusercontent.com/67952884/229355333-6aa82cca-525b-4a3a-9ece-80153926d7c9.png)
+
+<img width="574" alt="image" src="https://user-images.githubusercontent.com/67952884/229355805-03551fdc-032d-4de3-9c20-e25e07b5e4f8.png">
 
 
 
-
- 
 g) once you have confirmed the faulty drivem please send the ticket to the Hardware team in order to get the disk replaced, with the following message: 
 
 ```
