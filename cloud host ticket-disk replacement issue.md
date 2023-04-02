@@ -1,6 +1,6 @@
 **CLOUD HOST MAINTENANCE TICKET -DISK REPLACEMENT ISSUE RUNBOOK**
 
-This runbook will help you handle issues related to the host maintenance common incidents such aS DISK REPLACEMENT ISSUES
+This runbook will help you handle issues related to the host maintenance common incidents such as DISK REPLACEMENT ISSUES
 
 
 1) DISK REPLACEMENT ISSUES 
@@ -110,13 +110,23 @@ By checking the serial numbers agains the IMS data of the drives, you will be ab
 In order to do this ,please go to the ims portal, 
 from the ticket related to the case select view: 
 
+![image](https://user-images.githubusercontent.com/67952884/229355300-5b835592-48a5-4b60-a35e-e1a56500c192.png)
+
 
 
 then edit: 
 
+![image](https://user-images.githubusercontent.com/67952884/229355309-f5d4bd4a-07e4-4f5f-846f-0fcd9acdfdfa.png)
 
 
 then select hardware and then select the tab properties related to the faulty drive. In this case hdd3. You will be able to see the serial number of the drive and compare it with the one found it previously in this step.
+
+![image](https://user-images.githubusercontent.com/67952884/229355317-5a8a4045-b97a-4e75-b8ec-5e472f2c586c.png)
+
+Hdd3 proporties 
+
+![image](https://user-images.githubusercontent.com/67952884/229355333-6aa82cca-525b-4a3a-9ece-80153926d7c9.png)
+
 
 
 
