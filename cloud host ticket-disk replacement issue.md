@@ -137,6 +137,7 @@ Hdd3 proporties
 
 g) once you have confirmed the faulty drivem please send the ticket to the Hardware team in order to get the disk replaced, with the following message: 
 
+
 ```
 Hello DC,
 
