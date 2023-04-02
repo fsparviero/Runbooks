@@ -35,6 +35,7 @@ with the CVPM02 failed therefore there is the need to substitute the bbu
 Procedure: 
 
 a) schedule an host evacuation
+
 b) Check hardware age, and if it is more than 6 years old please reclaim the host after the scheduled evacuation
 
 c) If the host is less than 6 years old, once the host has bee evacuated send the host to the hardware team 
