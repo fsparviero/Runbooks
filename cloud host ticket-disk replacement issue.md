@@ -128,7 +128,7 @@ then select hardware and then select the tab properties related to the faulty dr
 <img width="779" alt="image" src="https://user-images.githubusercontent.com/67952884/229355713-a8564c44-cba3-44bf-8b5b-5a6844f4cb54.png">
 
 
-Hdd3 proporties 
+Hdd3 properties 
 
 
 <img width="580" alt="image" src="https://user-images.githubusercontent.com/67952884/229355943-c12ac128-b8cd-4ad1-b4cb-17287cd32bf5.png">
