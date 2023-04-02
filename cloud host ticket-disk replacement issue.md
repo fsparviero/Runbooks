@@ -128,7 +128,7 @@ then select hardware and then select the tab properties related to the faulty dr
 <img width="779" alt="image" src="https://user-images.githubusercontent.com/67952884/229355713-a8564c44-cba3-44bf-8b5b-5a6844f4cb54.png">
 
 
-Hdd3 properties 
+Hdd3 properties:
 
 
 <img width="580" alt="image" src="https://user-images.githubusercontent.com/67952884/229355943-c12ac128-b8cd-4ad1-b4cb-17287cd32bf5.png">
@@ -136,7 +136,7 @@ Hdd3 properties
 
 
 
-g) once you have confirmed the faulty drivem please send the ticket to the Hardware team in order to get the disk replaced, with the following message: 
+g) once you have confirmed the faulty drive, please send the ticket to the Hardware team in order to get the disk replaced, with the following message: 
 
 
 ```
@@ -148,9 +148,9 @@ Thank you,
 YourNameHere
 ```
 
-h) once the hW team replace the disk you should receive back the ticket in your queue.
+h) once the HW team replace the disk you should receive back the ticket in your queue.
 
-At this point, please, gconnect to the host using ssh connection using the root user
+At this point, please, connect to the host using ssh connection using the root user, in order to check the status of the rebuild of the disk:
 
 run the following command: 
 
