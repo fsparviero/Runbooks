@@ -110,15 +110,16 @@ By checking the serial numbers agains the IMS data of the drives, you will be ab
 In order to do this ,please go to the ims portal, 
 from the ticket related to the case select view: 
 
-![image](https://user-images.githubusercontent.com/67952884/229355300-5b835592-48a5-4b60-a35e-e1a56500c192.png)
+![image]
+
+<img width="505" alt="image" src="https://user-images.githubusercontent.com/67952884/229355623-75f99255-40a1-4420-85c1-a2dcedbcb44d.png">
+
 
 
 
 then edit: 
 
-![image]
 
-![image](https://user-images.githubusercontent.com/67952884/229355401-21f0c27a-804c-4b7d-ab0d-62cbe387807d.png)
 
 
 then select hardware and then select the tab properties related to the faulty drive. In this case hdd3. You will be able to see the serial number of the drive and compare it with the one found it previously in this step.
