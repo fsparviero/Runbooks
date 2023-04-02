@@ -131,7 +131,8 @@ then select hardware and then select the tab properties related to the faulty dr
 Hdd3 proporties 
 
 
-<img width="574" alt="image" src="https://user-images.githubusercontent.com/67952884/229355805-03551fdc-032d-4de3-9c20-e25e07b5e4f8.png">
+<img width="580" alt="image" src="https://user-images.githubusercontent.com/67952884/229355943-c12ac128-b8cd-4ad1-b4cb-17287cd32bf5.png">
+
 
 
 
